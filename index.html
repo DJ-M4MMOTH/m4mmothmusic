@@ -7,6 +7,7 @@
 <meta name="description" content="M4MMOTH is an Austin-based DJ playing tech house, bass house and melodic techno. Mixes, clips and booking info.">
 <meta property="og:title" content="M4MMOTH | DJ, Austin TX">
 <meta property="og:description" content="Austin-based DJ playing tech house, bass house and melodic techno. Mixes, clips and booking info.">
+<meta property="og:image" content="https://www.m4mmothmusic.com/ferro-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
@@ -207,6 +208,9 @@
   .clip { display: flex; flex-direction: column; gap: 14px; }
   .clip .ph, .clip video { aspect-ratio: 9 / 16; width: 100%; border-radius: 4px; object-fit: cover; background: var(--placeholder); }
   .clip figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--secondary); text-transform: uppercase; }
+  .clip-feature { display: flex; flex-direction: column; gap: 16px; max-width: 1040px; }
+  .clip-feature video { width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; background: var(--placeholder); object-fit: cover; }
+  .clip-feature figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--secondary); text-transform: uppercase; }
 
   /* ---------- About ---------- */
   .about { display: flex; gap: 120px; }
@@ -319,6 +323,7 @@
 
     .clip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .clip figcaption { font-size: 10px; letter-spacing: 0.1em; line-height: 1.4; }
+    .clip-feature figcaption { font-size: 10px; letter-spacing: 0.1em; line-height: 1.4; }
 
     .about, .booking { flex-direction: column; gap: 32px; }
     .about-main, .booking-intro { width: 100%; gap: 22px; }
@@ -434,26 +439,10 @@
       <a class="text-link" href="https://www.instagram.com/dj_m4mmoth/">More on Instagram →</a>
     </div>
 
-    <div class="clip-grid">
-      <!-- REPLACE each placeholder with a short vertical MP4:
-           <video src="clip-1.mp4" muted loop playsinline controls preload="metadata"></video> -->
-      <figure class="clip">
-        <div class="ph"><div class="ph-tag">[VERTICAL CLIP]</div><div class="ph-note">Crowd moving, 20–40 sec.</div></div>
-        <figcaption>Ferro Cocktail Bar — Rome</figcaption>
-      </figure>
-      <figure class="clip">
-        <div class="ph"><div class="ph-tag">[VERTICAL CLIP]</div><div class="ph-note">A clean transition people react to.</div></div>
-        <figcaption>RUST — Rome</figcaption>
-      </figure>
-      <figure class="clip">
-        <div class="ph"><div class="ph-tag">[VERTICAL CLIP]</div><div class="ph-note">Wide shot of the room and the floor.</div></div>
-        <figcaption>Neptune Beach — Jacksonville</figcaption>
-      </figure>
-      <figure class="clip">
-        <div class="ph"><div class="ph-tag">[VERTICAL CLIP]</div><div class="ph-note">Your best recent moment.</div></div>
-        <figcaption>[Venue] — [City]</figcaption>
-      </figure>
-    </div>
+    <figure class="clip-feature">
+      <video src="ferro-clip.mp4" poster="ferro-poster.jpg" controls playsinline preload="metadata"></video>
+      <figcaption>Live at Ferro Cocktail Bar — Rome, May 2026</figcaption>
+    </figure>
   </section>
 
   <!-- ================= ABOUT ================= -->
