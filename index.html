@@ -367,6 +367,42 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
   }
+
+  /* ===== LOGO THEME: colors taken from the M4MMOTH logo ===== */
+  :root {
+    --accent: #B47CFF;
+    --violet: #A855F7;
+    --red: #F0412A;
+    --headline-fade: linear-gradient(180deg, #F4F0F2 0%, #F4F0F2 24%, #EE8C80 56%, #E2402F 84%);
+  }
+  .nav-book:hover { background: rgba(180, 124, 255, 0.10); }
+
+  /* Headline fades white to red, top to bottom */
+  .hero h1 {
+    background: var(--headline-fade);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: fit-content;
+    padding-bottom: 0.06em;
+  }
+
+  /* Solid violet buttons */
+  .btn-fill { background: #8B2FD6; color: #fff; }
+  .btn-fill:hover { color: #fff; background: #9A3DE6; filter: none; }
+
+  /* Hero: headline left, logo right */
+  .hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 48px; }
+  .hero h1 { font-size: clamp(52px, 8vw, 124px); }
+  .hero-logo { width: clamp(280px, 28vw, 420px); height: auto; display: block; }
+
+  @media (max-width: 1000px) {
+    .hero { grid-template-columns: 1fr; gap: 8px; }
+    .hero-logo { order: -1; width: 150px; margin-left: -10px; }
+  }
+  @media (max-width: 820px) {
+    .hero-logo { width: 120px; }
+  }
 </style>
 </head>
 <body>
@@ -400,6 +436,7 @@
         <a class="btn btn-outline" href="#book">Book a date</a>
       </div>
     </div>
+    <img class="hero-logo" src="logo-mark.webp" alt="M4MMOTH logo" width="560" height="517">
   </section>
 
   <!-- ================= MIXES ================= -->
@@ -420,7 +457,7 @@
       <div class="mix-genre">Full Set Recorded Live</div>
     </div>
     <iframe title="Live at Ferro Cocktail Bar" loading="lazy" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/live-at-ferro-cocktail-bar-8&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/live-at-ferro-cocktail-bar-8&color=%23a855f7&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
   </article>
 
   <article class="mix">
@@ -430,7 +467,7 @@
       <div class="mix-genre">Peak Time Dance Floor</div>
     </div>
     <iframe title="Peak Time Dance Floor Energy" loading="lazy" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/rome-it-20260421&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/rome-it-20260421&color=%23a855f7&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
   </article>
 
   <article class="mix">
@@ -440,7 +477,7 @@
       <div class="mix-genre">Melodic Techno and Tech House</div>
     </div>
     <iframe title="Tech House and Melodic Techno Dance Floor" loading="lazy" allow="autoplay"
-      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/rome-it-20260301&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/dj_m4mmoth/rome-it-20260301&color=%23a855f7&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
   </article>
 </div>
   </section>
