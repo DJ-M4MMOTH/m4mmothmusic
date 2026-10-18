@@ -7,8 +7,6 @@
 <meta name="description" content="M4MMOTH is an Austin-based DJ playing tech house, bass house and melodic techno. Mixes, clips and booking info.">
 <meta property="og:title" content="M4MMOTH | DJ, Austin TX">
 <meta property="og:description" content="Austin-based DJ playing tech house, bass house and melodic techno. Mixes, clips and booking info.">
-<!-- Replace with your hero photo URL once it's hosted -->
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
@@ -153,7 +151,40 @@
     color: var(--accent);
   }
   .nav-book:hover { color: var(--accent); text-decoration: none; background: rgba(232, 163, 61, 0.08); }
-  
+
+  /* ---------- Hero (type only) ---------- */
+  .hero {
+    padding: 128px var(--margin);
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .hero-kicker { font-size: 14px; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(52px, 11vw, 160px);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .hero-tagline { font-size: 26px; line-height: 1.35; }
+  .hero-tagline .lead { font-weight: 500; display: block; }
+  .hero-tagline .quiet { color: var(--muted); display: block; margin-top: 6px; }
+  .set-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--secondary);
+  }
+  .set-types .sep { color: var(--outline); }
+  .hero-actions { display: flex; gap: 16px; padding-top: 8px; }
+
   /* ---------- Mixes ---------- */
   .mix-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .mix {
@@ -252,8 +283,6 @@
   /* ---------- Tablet ---------- */
   @media (max-width: 1200px) {
     :root { --margin: 48px; --section-pad: 96px; }
-    .hero-copy { width: 56%; }
-    .hero h1 { font-size: 80px; }
     .mix-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .clip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .about, .booking { gap: 64px; }
@@ -269,12 +298,9 @@
     .nav a:not(.nav-book) { display: none; }
     .nav-book { padding: 0 16px; font-size: 14px; font-weight: 600; }
 
-    .hero { flex-direction: column-reverse; min-height: 0; }
-    .hero-media { padding: 16px var(--margin) 0; }
-    .hero-media .ph, .hero-media img { height: 400px; }
-    .hero-copy { width: 100%; padding: 32px var(--margin) 48px; gap: 20px; }
+    .hero { padding: 48px var(--margin) 56px; }
+    .hero-copy { gap: 20px; }
     .hero-kicker { font-size: 12px; }
-    .hero h1 { font-size: 52px; }
     .hero-tagline { font-size: 19px; line-height: 1.45; }
     .hero-tagline .lead, .hero-tagline .quiet { display: inline; margin: 0; }
     .set-types { font-size: 11px; letter-spacing: 0.12em; gap: 8px; }
@@ -353,13 +379,6 @@
         <a class="btn btn-outline" href="#book">Book a date</a>
       </div>
     </div>
-    <div class="hero-media">
-      <!-- REPLACE this placeholder with:  <img src="YOUR-HERO-PHOTO.jpg" alt="M4MMOTH playing a set at [venue]"> -->
-      <div class="ph">
-        <div class="ph-tag">[HERO PHOTO]</div>
-        <div class="ph-note">You at the decks with crowd and lights in frame. High-res, shot at a real gig.</div>
-      </div>
-    </div>
   </section>
 
   <!-- ================= MIXES ================= -->
@@ -403,7 +422,6 @@
       src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/m4mmoth-498757202/rome-it-20260301&color=%23e8a33d&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false"></iframe>
   </article>
 </div>
-    </div>
   </section>
 
   <!-- ================= CLIPS ================= -->
