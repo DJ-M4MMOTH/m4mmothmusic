@@ -211,6 +211,10 @@
   .clip-feature { display: flex; flex-direction: column; gap: 16px; max-width: 1040px; }
   .clip-feature video { width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; background: var(--placeholder); object-fit: cover; }
   .clip-feature figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--secondary); text-transform: uppercase; }
+  .photo-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 1040px; margin-top: 48px; }
+  .photo { display: flex; flex-direction: column; gap: 14px; }
+  .photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; background: var(--placeholder); }
+  .photo figcaption { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--secondary); text-transform: uppercase; line-height: 1.5; }
 
   /* ---------- About ---------- */
   .about { display: flex; gap: 120px; }
@@ -324,6 +328,17 @@
     .clip-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .clip figcaption { font-size: 10px; letter-spacing: 0.1em; line-height: 1.4; }
     .clip-feature figcaption { font-size: 10px; letter-spacing: 0.1em; line-height: 1.4; }
+    /* photos become a swipeable strip on phones */
+    .photo-row {
+      display: flex; gap: 12px; margin-top: 32px;
+      margin-left: calc(var(--margin) * -1); margin-right: calc(var(--margin) * -1);
+      padding: 0 var(--margin); overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-padding-inline: var(--margin);
+      scrollbar-width: none;
+    }
+    .photo-row::-webkit-scrollbar { display: none; }
+    .photo { flex: 0 0 72%; scroll-snap-align: start; }
+    .photo figcaption { font-size: 10px; letter-spacing: 0.1em; }
 
     .about, .booking { flex-direction: column; gap: 32px; }
     .about-main, .booking-intro { width: 100%; gap: 22px; }
@@ -443,6 +458,21 @@
       <video src="ferro-clip.mp4" poster="ferro-poster.jpg" controls playsinline preload="metadata"></video>
       <figcaption>Live at Ferro Cocktail Bar — Rome, May 2026</figcaption>
     </figure>
+
+    <div class="photo-row">
+      <figure class="photo">
+        <img src="photo-neptune.jpg" alt="M4MMOTH playing an outdoor set at Neptune Beach under a palm tree" loading="lazy">
+        <figcaption>Neptune Beach — Jacksonville</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="photo-amaranto.jpg" alt="View from the decks over guests at a private party at Amaranto Bar" loading="lazy">
+        <figcaption>Private party, Amaranto Bar — Rome</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="photo-rust.jpg" alt="M4MMOTH in the red-lit DJ booth at RUST" loading="lazy">
+        <figcaption>RUST — Rome</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- ================= ABOUT ================= -->
